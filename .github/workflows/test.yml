@@ -19,7 +19,7 @@ jobs:
           BRANCH: main
           OWNER: ArtemMarchukInmost
           REPO: git-github-commits-from-success-run-action
-          AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTH_TOKEN: ${{ secrets.API_TOKEN }}
           OUTPUT_PATH: ${{ github.workspace }}/output.json
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
