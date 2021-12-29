@@ -1,0 +1,27 @@
+name: 'Get Commits'
+description: 'Get Commits From Last Workflow Success Run To Last Commit'
+author: '[Inmost]'
+
+inputs:
+  WORKFLOW_ID:
+    description: 'Your Workflow ID'
+    required: true
+  BRANCH:
+    description: 'Branch'
+    required: true
+  OWNER:
+    description: 'Repo Owner'
+    required: true
+  REPO:
+    description: 'Github Repo'
+    required: true
+  AUTH_TOKEN:
+    description: 'Github Auth Token'
+    required: true
+  OUTPUT_PATH:
+    description: 'Path Write Commits To'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

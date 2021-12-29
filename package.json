@@ -1,0 +1,19 @@
+{
+  "name": "git-github-commits-from-success-run-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/core": "^3.5.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "@actions/core": "^1.6.0"
+  }
+}

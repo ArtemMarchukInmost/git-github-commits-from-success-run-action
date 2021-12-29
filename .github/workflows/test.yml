@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ArtemMarchukInmost/git-github-commits-from-success-run-action@main
+        with:
+          WORKFLOW_ID: 16857291
+          BRANCH: main
+          OWNER: ArtemMarchukInmost
+          REPO: git-github-commits-from-success-run-action
+          AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_PATH: ${{ github.workspace }}/output.json
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: result
+          path: ${{ github.workspace }}/output.json
